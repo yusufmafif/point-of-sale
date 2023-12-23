@@ -1,0 +1,139 @@
+POST http://localhost:5000/users
+content-Type: application/json
+
+ {
+    "name": "Yusuf M. Afif",
+    "email": "afif.yusuf@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "role": "admin"
+ }
+
+###
+POST http://localhost:5000/items
+content-Type: application/json
+
+ {
+    "item_barcode": "453672542",
+    "item_nama": "UK Soap",
+    "item_satuan": "pcs",
+    "item_harga": 123456,
+    "category_id": "Makanan"
+ }
+
+###
+POST http://localhost:5000/transaction
+content-Type: application/json
+
+ {
+   "sell_date": 1702227358360,
+   "total_price": 313313,
+   "payment_method": "cash",
+   "discount": 13,
+   "user_id" : 1,
+  "transaction_details": [
+   {
+      "item_qty": 1,
+      "item_price": 100000,
+      "subtotal_price": 200000,
+      "item_id": 2
+   },
+   {
+      "item_qty": 1,
+      "item_price": 20000,
+      "subtotal_price": 20000,
+      "item_id": 3
+   }
+  ]
+ }
+
+
+###
+ GET http://localhost:5000/transaction/58
+
+###
+GET http://localhost:5000/items/
+
+###
+GET http://localhost:5000/users/19c79815-9612-4628-9388-95aaf8a359b2
+
+###
+PATCH http://localhost:5000/users/19c79815-9612-4628-9388-95aaf8a359b2
+content-Type: application/json
+
+ {
+    "name": "Jayakarta Pro",
+    "email": "jayakartaproduction@gmail.com",
+    "password": "",
+    "confPassword": "",
+    "role": "user"
+ }
+###
+POST http://localhost:5000/users
+content-Type: application/json
+
+ {
+    "name": "Jayakarta Pro",
+    "email": "jayakartaproduction@gmail.com",
+    "password": "",
+    "confPassword": "",
+    "role": "user"
+ }
+
+###
+ DELETE http://localhost:5000/users/19c79815-9612-4628-9388-95aaf8a359b2
+
+###
+POST http://localhost:5000/login
+content-Type: application/json
+
+ {
+    "email": "afif.yusuf@gmail.com",
+    "password": "123456"
+ }
+###
+POST http://localhost:5000/login
+content-Type: application/json
+
+ {
+    "email": "jayakartaproduction@gmail.com",
+    "password": "123456"
+ }
+
+###
+GET http://localhost:5000/me
+
+###
+DELETE http://localhost:5000/logout
+
+###
+GET http://localhost:5000/items
+
+###
+GET http://localhost:5000/items/bea15d71-96af-4ee8-aabc-5827f98f033c
+###
+GET http://localhost:5000/items/a06fdc2d-4f6d-4664-8be6-fe3268077f8f
+
+###
+POST http://localhost:5000/students
+Content-Type: application/json
+
+{
+   "name": "Yusuf Afif",
+   "birth": "1998-08-17"
+}
+
+###
+PATCH  http://localhost:5000/items/bea15d71-96af-4ee8-aabc-5827f98f033c
+Content-Type: application/json
+
+{
+    "item_barcode": "453672542",
+    "item_nama": "Ayyam Goreng",
+    "item_satuan": "pcs",
+    "item_harga": 123456,
+    "category_id": 2
+ }
+
+###
+DELETE   http://localhost:5000/items/15a0894c-21d0-4b8b-bffe-70881472a6c4
